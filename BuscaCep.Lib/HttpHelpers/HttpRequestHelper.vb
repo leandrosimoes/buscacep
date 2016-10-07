@@ -16,7 +16,26 @@ Namespace Helpers
             ContentType = sContentType
         End Sub
 
-        Public Function Send() As HttpResponseHelper
+        Public Async Function SendAsync() As Task(Of HttpResponseHelper)
+            Dim request As HttpWebRequest = WebRequest.Create(Url)
+            request.Method = Method
+            request.ContentType = ContentType
+            Dim postBytes As Byte() = Encoding.ASCII.GetBytes(DataToSend)
+
+            Using requestStream As Stream = request.GetRequestStream()
+                Await requestStream.WriteAsync(postBytes, 0, postBytes.Length)
+
+                Using response As WebResponse = Await request.GetResponseAsync()
+                    Using stream As Stream = response.GetResponseStream()
+                        Using responseText As New StreamReader(stream, Encoding.GetEncoding("ISO-8859-1"))
+                            Return New HttpResponseHelper(Await responseText.ReadToEndAsync())
+                        End Using
+                    End Using
+                End Using
+            End Using
+        End Function
+
+        Public Function SendSync() As HttpResponseHelper
             Dim request As HttpWebRequest = WebRequest.Create(Url)
             request.Method = Method
             request.ContentType = ContentType

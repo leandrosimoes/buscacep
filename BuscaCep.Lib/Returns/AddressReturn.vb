@@ -1,4 +1,4 @@
-﻿Imports BuscaCep.Enums
+﻿Imports BuscaCep.Lib.Enums
 
 Namespace Returns
     Public Class AddressReturn

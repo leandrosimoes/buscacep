@@ -39,15 +39,16 @@ Partial Class frmPrincipal
         Me.lblCep = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.lblUnique = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout
         '
         'btnBuscar
         '
         Me.btnBuscar.Location = New System.Drawing.Point(165, 12)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(60, 23)
+        Me.btnBuscar.Size = New System.Drawing.Size(112, 23)
         Me.btnBuscar.TabIndex = 0
-        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.Text = "Search Async"
         Me.btnBuscar.UseVisualStyleBackColor = true
         '
         'txtCep
@@ -201,11 +202,21 @@ Partial Class frmPrincipal
         Me.lblUnique.TabIndex = 16
         Me.lblUnique.Text = "Unique result (CEP for whole city)"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(283, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(112, 23)
+        Me.Button1.TabIndex = 17
+        Me.Button1.Text = "Search Sync"
+        Me.Button1.UseVisualStyleBackColor = true
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(547, 209)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lblUnique)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.lblCep)
@@ -251,4 +262,5 @@ End Sub
     Friend WithEvents lblCep As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents lblUnique As Label
+    Friend WithEvents Button1 As Button
 End Class

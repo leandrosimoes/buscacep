@@ -1,5 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
-Imports BuscaCep.Returns
+Imports BuscaCep.Lib.Returns
 
 Namespace Helpers
     Public Class HttpResponseHelper
